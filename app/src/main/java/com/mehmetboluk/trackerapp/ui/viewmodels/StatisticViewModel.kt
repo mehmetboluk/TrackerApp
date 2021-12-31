@@ -9,4 +9,5 @@ import javax.inject.Inject
 class StatisticViewModel @Inject constructor(
     val mainRepository: MainRepository
 ) : ViewModel(){
+    
 }

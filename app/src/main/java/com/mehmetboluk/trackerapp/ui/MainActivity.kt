@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         binding.bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
+        binding.bottomNavigationView.setOnItemReselectedListener { /* NO-OP */}
 
         navHostFragment.findNavController()
             .addOnDestinationChangedListener { _, destination, _ ->
